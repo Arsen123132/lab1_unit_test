@@ -1,1 +1,39 @@
-# lab1_unit_test
+# Temperature Converter
+
+A Python utility for converting temperatures between Celsius, Fahrenheit, and Kelvin scales.
+
+## Description
+
+This project implements a `TemperatureConverter` class that converts temperatures between all three major temperature scales. The converter includes validation to prevent physically impossible temperatures below absolute zero.
+
+## Features
+
+- Convert between Celsius, Fahrenheit, and Kelvin
+- Validation against absolute zero temperatures
+- Case-insensitive unit handling
+- Generic `convert()` method for flexible conversions
+- 20 unit tests covering all functionality
+
+## Test Coverage
+
+The test suite includes 20 tests covering:
+
+- Basic conversions (freezing point, boiling point, negative temperatures)
+- Kelvin conversions with all scales
+- Error handling for temperatures below absolute zero
+- Generic convert method functionality
+- Round-trip conversions to ensure accuracy
+
+## Temperature Reference
+
+### Absolute Zero Values
+- **Celsius:** -273.15°C
+- **Fahrenheit:** -459.67°F
+- **Kelvin:** 0 K
+
+### Common Reference Points
+| Temperature | Celsius | Fahrenheit | Kelvin |
+|-------------|---------|------------|--------|
+| Water Freezing | 0°C | 32°F | 273.15 K |
+| Room Temperature | 20°C | 68°F | 293.15 K |
+| Water Boiling | 100°C | 212°F | 373.15 K |
