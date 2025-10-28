@@ -146,8 +146,13 @@ class TemperatureConverter:
             Converted temperature value
             
         Raises:
+            TypeError: If value is not numeric
             ValueError: If units are invalid or temperature is below absolute zero
         """
+        # Validate input type
+        if not isinstance(value, (int, float)):
+            raise TypeError(f"Temperature value must be numeric, got {type(value).__name__}")
+        
         from_unit = from_unit.upper()
         to_unit = to_unit.upper()
         
