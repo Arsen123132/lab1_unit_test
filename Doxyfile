@@ -1,0 +1,16 @@
+PROJECT_NAME           = "Temperature Converter"
+OUTPUT_DIRECTORY       = docs
+
+INPUT                  = . README.md
+
+RECURSIVE              = YES
+FILE_PATTERNS          = *.py
+OPTIMIZE_OUTPUT_JAVA   = YES
+JAV_AUTOBRIEF          = YES
+EXTRACT_ALL            = YES
+GENERATE_LATEX         = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_XML           = NO
+FILTER_SOURCE_FILES    = NO 
+USE_MDFILE_AS_MAINPAGE = README.md
