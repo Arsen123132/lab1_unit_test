@@ -1,34 +1,40 @@
+"""!
+@file temperature_converter.py
+@brief Module for converting temperatures between Celsius, Fahrenheit, and Kelvin.
+@author Arsenii Holoborodko
+@date 2025
+"""
+
 class TemperatureConverter:
-    """
-    A utility class for converting temperatures between Celsius, Fahrenheit, and Kelvin.
+    """!
+    @brief A utility class for converting temperatures between Celsius, Fahrenheit, and Kelvin.
     
     Supports conversion between all three temperature scales with proper validation
     and precision handling.
     """
     
-    # Absolute zero constants for validation
+    ## Absolute zero in Celsius
     ABSOLUTE_ZERO_CELSIUS = -273.15
+    ## Absolute zero in Fahrenheit
     ABSOLUTE_ZERO_FAHRENHEIT = -459.67
+    ## Absolute zero in Kelvin
     ABSOLUTE_ZERO_KELVIN = 0.0
     
     def __init__(self):
-        """Initialize the TemperatureConverter."""
+        """!
+        @brief Initialize the TemperatureConverter.
+        """
         pass
     
     def celsius_to_fahrenheit(self, celsius: float) -> float:
-        """
-        Convert Celsius to Fahrenheit.
+        """!
+        @brief Convert Celsius to Fahrenheit.
         
-        Formula: F = C × 9/5 + 32
+        Formula: \f$ F = C \times \frac{9}{5} + 32 \f$
         
-        Args:
-            celsius: Temperature in Celsius
-            
-        Returns:
-            Temperature in Fahrenheit
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param celsius Temperature in Celsius.
+        @return Temperature in Fahrenheit.
+        @throws ValueError If temperature is below absolute zero.
         """
         if celsius < self.ABSOLUTE_ZERO_CELSIUS:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_CELSIUS}°C)")
@@ -36,19 +42,14 @@ class TemperatureConverter:
         return (celsius * 9/5) + 32
     
     def celsius_to_kelvin(self, celsius: float) -> float:
-        """
-        Convert Celsius to Kelvin.
+        """!
+        @brief Convert Celsius to Kelvin.
         
-        Formula: K = C + 273.15
+        Formula: \f$ K = C + 273.15 \f$
         
-        Args:
-            celsius: Temperature in Celsius
-            
-        Returns:
-            Temperature in Kelvin
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param celsius Temperature in Celsius.
+        @return Temperature in Kelvin.
+        @throws ValueError If temperature is below absolute zero.
         """
         if celsius < self.ABSOLUTE_ZERO_CELSIUS:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_CELSIUS}°C)")
@@ -56,19 +57,14 @@ class TemperatureConverter:
         return celsius + 273.15
     
     def fahrenheit_to_celsius(self, fahrenheit: float) -> float:
-        """
-        Convert Fahrenheit to Celsius.
+        """!
+        @brief Convert Fahrenheit to Celsius.
         
-        Formula: C = (F - 32) × 5/9
+        Formula: \f$ C = (F - 32) \times \frac{5}{9} \f$
         
-        Args:
-            fahrenheit: Temperature in Fahrenheit
-            
-        Returns:
-            Temperature in Celsius
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param fahrenheit Temperature in Fahrenheit.
+        @return Temperature in Celsius.
+        @throws ValueError If temperature is below absolute zero.
         """
         if fahrenheit < self.ABSOLUTE_ZERO_FAHRENHEIT:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_FAHRENHEIT}°F)")
@@ -76,17 +72,12 @@ class TemperatureConverter:
         return (fahrenheit - 32) * 5/9
     
     def fahrenheit_to_kelvin(self, fahrenheit: float) -> float:
-        """
-        Convert Fahrenheit to Kelvin.
+        """!
+        @brief Convert Fahrenheit to Kelvin.
         
-        Args:
-            fahrenheit: Temperature in Fahrenheit
-            
-        Returns:
-            Temperature in Kelvin
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param fahrenheit Temperature in Fahrenheit.
+        @return Temperature in Kelvin.
+        @throws ValueError If temperature is below absolute zero.
         """
         if fahrenheit < self.ABSOLUTE_ZERO_FAHRENHEIT:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_FAHRENHEIT}°F)")
@@ -95,19 +86,14 @@ class TemperatureConverter:
         return self.celsius_to_kelvin(celsius)
     
     def kelvin_to_celsius(self, kelvin: float) -> float:
-        """
-        Convert Kelvin to Celsius.
+        """!
+        @brief Convert Kelvin to Celsius.
         
-        Formula: C = K - 273.15
+        Formula: \f$ C = K - 273.15 \f$
         
-        Args:
-            kelvin: Temperature in Kelvin
-            
-        Returns:
-            Temperature in Celsius
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param kelvin Temperature in Kelvin.
+        @return Temperature in Celsius.
+        @throws ValueError If temperature is below absolute zero.
         """
         if kelvin < self.ABSOLUTE_ZERO_KELVIN:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_KELVIN} K)")
@@ -115,17 +101,12 @@ class TemperatureConverter:
         return kelvin - 273.15
     
     def kelvin_to_fahrenheit(self, kelvin: float) -> float:
-        """
-        Convert Kelvin to Fahrenheit.
+        """!
+        @brief Convert Kelvin to Fahrenheit.
         
-        Args:
-            kelvin: Temperature in Kelvin
-            
-        Returns:
-            Temperature in Fahrenheit
-            
-        Raises:
-            ValueError: If temperature is below absolute zero
+        @param kelvin Temperature in Kelvin.
+        @return Temperature in Fahrenheit.
+        @throws ValueError If temperature is below absolute zero.
         """
         if kelvin < self.ABSOLUTE_ZERO_KELVIN:
             raise ValueError(f"Temperature cannot be below absolute zero ({self.ABSOLUTE_ZERO_KELVIN} K)")
@@ -134,20 +115,15 @@ class TemperatureConverter:
         return self.celsius_to_fahrenheit(celsius)
     
     def convert(self, value: float, from_unit: str, to_unit: str) -> float:
-        """
-        Generic conversion method that converts between any two temperature units.
+        """!
+        @brief Generic conversion method that converts between any two temperature units.
         
-        Args:
-            value: Temperature value to convert
-            from_unit: Source unit ('C', 'F', or 'K')
-            to_unit: Target unit ('C', 'F', or 'K')
-            
-        Returns:
-            Converted temperature value
-            
-        Raises:
-            TypeError: If value is not numeric
-            ValueError: If units are invalid or temperature is below absolute zero
+        @param value Temperature value to convert.
+        @param from_unit Source unit ('C', 'F', or 'K').
+        @param to_unit Target unit ('C', 'F', or 'K').
+        @return Converted temperature value.
+        @throws TypeError If value is not numeric.
+        @throws ValueError If units are invalid or temperature is below absolute zero.
         """
         # Validate input type
         if not isinstance(value, (int, float)):
@@ -180,15 +156,12 @@ class TemperatureConverter:
         return conversion_func(value)
     
     def is_below_absolute_zero(self, value: float, unit: str) -> bool:
-        """
-        Check if a temperature value is below absolute zero.
+        """!
+        @brief Check if a temperature value is below absolute zero.
         
-        Args:
-            value: Temperature value
-            unit: Temperature unit ('C', 'F', or 'K')
-            
-        Returns:
-            True if below absolute zero, False otherwise
+        @param value Temperature value.
+        @param unit Temperature unit ('C', 'F', or 'K').
+        @return True if below absolute zero, False otherwise.
         """
         unit = unit.upper()
         
